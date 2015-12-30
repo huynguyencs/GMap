@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rzw-31-QEK"/>
+                        <viewControllerLayoutGuide type="bottom" id="OcK-VD-ERt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n6S-bZ-egM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQ1-kJ-Nnl">
+                                <rect key="frame" x="6" y="447" width="309" height="63"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aj4-cJ-FVa" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="77" width="320" height="362"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dn-FR-Zlg">
+                                <rect key="frame" x="87" y="518" width="147" height="30"/>
+                                <state key="normal" title="Make appoinment"/>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgj-lJ-75V">
+                                <rect key="frame" x="0.0" y="33" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Enter address" id="xY6-sx-cW3">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="27R-TY-zJj">
+                                            <connections>
+                                                <action selector="showSearchController:" destination="BYZ-38-t0r" id="2Iu-tr-iMa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fgj-lJ-75V" firstAttribute="leading" secondItem="aj4-cJ-FVa" secondAttribute="leading" id="A5n-Wg-HNs"/>
+                            <constraint firstItem="qQ1-kJ-Nnl" firstAttribute="top" secondItem="aj4-cJ-FVa" secondAttribute="bottom" constant="8" id="DFn-Sk-tzp"/>
+                            <constraint firstItem="7Dn-FR-Zlg" firstAttribute="centerX" secondItem="n6S-bZ-egM" secondAttribute="centerX" id="MZS-xS-pXC"/>
+                            <constraint firstAttribute="bottom" secondItem="7Dn-FR-Zlg" secondAttribute="bottom" constant="20" id="NAT-xE-wrW"/>
+                            <constraint firstItem="aj4-cJ-FVa" firstAttribute="leading" secondItem="n6S-bZ-egM" secondAttribute="leading" id="Nut-Xr-uTg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qQ1-kJ-Nnl" secondAttribute="trailing" constant="-15" id="RS1-BB-iiw"/>
+                            <constraint firstItem="OcK-VD-ERt" firstAttribute="top" secondItem="aj4-cJ-FVa" secondAttribute="bottom" constant="129" id="UP4-Ey-h1K"/>
+                            <constraint firstItem="qQ1-kJ-Nnl" firstAttribute="leading" secondItem="n6S-bZ-egM" secondAttribute="leadingMargin" constant="-14" id="avz-aq-O26"/>
+                            <constraint firstItem="OcK-VD-ERt" firstAttribute="top" secondItem="qQ1-kJ-Nnl" secondAttribute="bottom" constant="58" id="cUy-3N-8oy"/>
+                            <constraint firstItem="fgj-lJ-75V" firstAttribute="top" secondItem="n6S-bZ-egM" secondAttribute="top" constant="33" id="fuV-2H-Qx0"/>
+                            <constraint firstItem="aj4-cJ-FVa" firstAttribute="top" secondItem="n6S-bZ-egM" secondAttribute="top" constant="77" id="g7z-Tc-6wa"/>
+                            <constraint firstItem="7Dn-FR-Zlg" firstAttribute="leading" secondItem="n6S-bZ-egM" secondAttribute="leadingMargin" constant="67" id="gV7-kg-SAA"/>
+                            <constraint firstAttribute="trailing" secondItem="aj4-cJ-FVa" secondAttribute="trailing" id="lWd-EZ-6PO"/>
+                            <constraint firstItem="fgj-lJ-75V" firstAttribute="trailing" secondItem="aj4-cJ-FVa" secondAttribute="trailing" id="zhI-DA-1W5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="curlocation" destination="qQ1-kJ-Nnl" id="gMS-uj-Vhv"/>
+                        <outlet property="mapview" destination="aj4-cJ-FVa" id="dcY-8s-ffy"/>
+                        <outlet property="searchDisplayController" destination="SeZ-Ea-TxN" id="VYz-fa-V9R"/>
+                        <outlet property="submit" destination="7Dn-FR-Zlg" id="QMM-in-epj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="SeZ-Ea-TxN">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="0HK-EZ-pWg"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="Sww-g7-5Pm"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="uVS-zS-fm8"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="XoU-0g-nzA"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="143" y="243"/>
+        </scene>
+    </scenes>
+</document>
